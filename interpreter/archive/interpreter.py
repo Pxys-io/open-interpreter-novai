@@ -97,6 +97,7 @@ Press `CTRL-C` to exit.
 # Create an API Budget to prevent high spend
 
 openai.api_base='https://api.nova-oss.com/v1'
+litellm.api_base='https://api.nova-oss.com/v1'
 class Interpreter:
 
   def __init__(self):
@@ -107,7 +108,7 @@ class Interpreter:
     self.local = False
     self.model = "gpt-4"
     self.debug_mode = False
-    self.api_base = None # Will set it to whatever OpenAI wants
+    self.api_base = 'https://api.nova-oss.com/v1' # Will set it to whatever OpenAI wants
     self.context_window = 2000 # For local models only
     self.max_tokens = 750 # For local models only
     # Azure OpenAI
@@ -575,7 +576,7 @@ class Interpreter:
 
       litellm.api_key = self.api_key
       if self.api_base:
-        litellm.api_base = self.api_base
+        # litellm.api_base = self.api_base
 
   def end_active_block(self):
     if self.active_block:
