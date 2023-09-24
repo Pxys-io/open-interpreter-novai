@@ -31,7 +31,7 @@ import time
 import traceback
 import json
 import platform
-import openai
+import openai 
 import litellm
 import pkg_resources
 import uuid
@@ -96,7 +96,7 @@ Press `CTRL-C` to exit.
 
 # Create an API Budget to prevent high spend
 
-
+openai.api_base='https://api.nova-oss.com/v1'
 class Interpreter:
 
   def __init__(self):
